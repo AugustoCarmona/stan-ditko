@@ -9,15 +9,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>We are working on this site :P</p>
-        <p>
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
+        <h2>We are working on this site :P</h2>
+        {/*
         <p>
           <a
             className="App-link"
@@ -37,6 +30,7 @@ function App() {
             Vite Docs
           </a>
         </p>
+        */}
       </header>
     </div>
   )
