@@ -1,37 +1,16 @@
 import React, { useState } from 'react'
-import logo from './assets/img/logo.svg'
+import './assets/css/Normalize.css'
 import './assets/css/App.css'
+import NavBar from './components/Navbar/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>We are working on this site :P</h2>
-        {/*
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-        */}
-      </header>
+      <div className="nav-bar">
+        <NavBar />
+      </div>
     </div>
   )
 }
