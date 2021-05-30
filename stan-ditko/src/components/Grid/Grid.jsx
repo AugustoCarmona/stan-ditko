@@ -9,18 +9,72 @@ class Grid extends Component {
 
                     <div className="grid-card">
                         <a href="">
-                            <img src="https://img2.cgtrader.com/items/2052418/f8a02d1db7/ironman-comics-3d-model-rigged-max--obj-mtl-3ds-fbx.jpg" alt="" className="grid-card_img"/>
+                            <img src="https://i.pinimg.com/originals/5c/5a/f9/5c5af959310f6eb4ad52fa589c7d1301.jpg" alt="" className="grid-card_img"/>
                             <div className="grid-card_details">
-                                <p>name</p>
+                                <p>name 1</p>
                             </div>
                         </a>
                     </div>
 
                     <div className="grid-card">
                         <a href="">
-                            <img src="https://img2.cgtrader.com/items/2052418/f8a02d1db7/ironman-comics-3d-model-rigged-max--obj-mtl-3ds-fbx.jpg" alt="" className="grid-card_img"/>
+                            <img src="https://i.pinimg.com/originals/5c/5a/f9/5c5af959310f6eb4ad52fa589c7d1301.jpg" alt="" className="grid-card_img"/>
                             <div className="grid-card_details">
                                 <p>name 2</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div className="grid-card">
+                        <a href="">
+                            <img src="https://i.pinimg.com/originals/5c/5a/f9/5c5af959310f6eb4ad52fa589c7d1301.jpg" alt="" className="grid-card_img"/>
+                            <div className="grid-card_details">
+                                <p>name 3</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div className="grid-card">
+                        <a href="">
+                            <img src="https://i.pinimg.com/originals/5c/5a/f9/5c5af959310f6eb4ad52fa589c7d1301.jpg" alt="" className="grid-card_img"/>
+                            <div className="grid-card_details">
+                                <p>name 4</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div className="grid-card">
+                        <a href="">
+                            <img src="https://i.pinimg.com/originals/5c/5a/f9/5c5af959310f6eb4ad52fa589c7d1301.jpg" alt="" className="grid-card_img"/>
+                            <div className="grid-card_details">
+                                <p>name 5</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div className="grid-card">
+                        <a href="">
+                            <img src="https://i.pinimg.com/originals/5c/5a/f9/5c5af959310f6eb4ad52fa589c7d1301.jpg" alt="" className="grid-card_img"/>
+                            <div className="grid-card_details">
+                                <p>name 6</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div className="grid-card">
+                        <a href="">
+                            <img src="https://i.pinimg.com/originals/5c/5a/f9/5c5af959310f6eb4ad52fa589c7d1301.jpg" alt="" className="grid-card_img"/>
+                            <div className="grid-card_details">
+                                <p>name 7</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div className="grid-card">
+                        <a href="">
+                            <img src="https://i.pinimg.com/originals/5c/5a/f9/5c5af959310f6eb4ad52fa589c7d1301.jpg" alt="" className="grid-card_img"/>
+                            <div className="grid-card_details">
+                                <p>name 8</p>
                             </div>
                         </a>
                     </div>
