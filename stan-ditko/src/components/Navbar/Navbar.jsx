@@ -8,13 +8,18 @@ class NavBar extends Component {
             <nav className="navbar">
                 <div className="left-side">
                     <div className="logo">
-                        <a href="#">Marvel</a>
+                        <a href="#"><img src="././src/assets/img/logo.png" alt="Marve Logo"/></a>
                     </div>
                 </div>
 
                 <div className="rigth-side">
-                    <input type="text" placeholder="Search"/>
-                    <button>Search</button>
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" placeholder="Buscar"/>
+                    <button>
+                        <i class="far fa-star"></i>
+                    </button>
                 </div>
             </nav>
         );
