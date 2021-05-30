@@ -1,4 +1,4 @@
-.navbar {
+.SearchBar {
     background: #ffffff;
     width: 100%;
     height: 60px;
@@ -6,19 +6,20 @@
     align-items: center;
 }
 
-.navbar .left-side {
+/* Rigth side and left side division */
+.SearchBar .left-side {
     flex: 10%;
     display: flex;
     justify-content: center;
 }
 
-.navbar .rigth-side {
+.SearchBar .rigth-side {
     flex: 90%;
     display: flex;
     justify-content: left;
    padding-left: 10px; 
 }
-.navbar .rigth-side input {
+.SearchBar .rigth-side input {
     height: 30px;
     width: 85%;
     border: none;
@@ -26,26 +27,26 @@
     font-size: 14px;
     color: #d1d9d9; /* cambiar */
 }
-.navbar .rigth-side button {
+.SearchBar .rigth-side button {
     color: #d1d9d9; /* cambiar */
     outline: none;
     background: none;
     border: none;
     font-size: 17px;
 }
-.navbar .rigth-side .fa-search {
+.SearchBar .rigth-side .fa-search {
     border-left: 2px solid #d1d9d9;
     padding: 5px;
     padding-left: 10px;
 }
-.navbar .rigth-side .fa-star {
+.SearchBar .rigth-side .fa-star {
     border-right: 2px solid #d1d9d9;
     padding: 5px;
 }
-.navbar .rigth-side button:hover {
+.SearchBar .rigth-side button:hover {
     cursor: pointer;
 }
 
-.navbar .left-side .logo img {
+.SearchBar .left-side .logo img {
     max-height: 40px;
 }

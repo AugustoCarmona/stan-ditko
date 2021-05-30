@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { MenuItems } from './MenuItem';
-import './Navbar.css';
+import './SearchBar.css';
 
-class NavBar extends Component {
+class SearchBar extends Component {
     render () {
         return (
-            <nav className="navbar">
+            <nav className="SearchBar
+        ">
                 <div className="left-side">
                     <div className="logo">
                         <a href="#"><img src="././src/assets/img/logo.png" alt="Marve Logo"/></a>
@@ -26,4 +26,4 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+export default SearchBar;
