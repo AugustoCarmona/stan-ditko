@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './SearchBar.css';
+import axios from 'axios';
 
 class SearchBar extends Component {
-
     constructor( props ) {
 		super( props );
 		this.state = {
@@ -10,12 +10,45 @@ class SearchBar extends Component {
             results: {},
             loading: false,
             message: '',
-		};
+        };
+        this.cancel = '';
     }
+
+    fetchSearchResults = (updatedPageNo = '', query) => {
+    	const pageNumber = updatedPageNo ? `&page=${updatedPageNo}` : '';
+    	const searchUrl = `https://pixabay.com/api/?key=12413278-79b713c7e196c7a3defb5330e&q=${query}${pageNumber}`;
+
+    	if (this.cancel) {
+    		this.cancel.cancel();
+        } this.cancel = axios.CancelToken.source();
+
+    	axios
+    		.get(searchUrl, {
+    			cancelToken: this.cancel.token,
+    		})
+    		.then((res) => {
+    			const resultNotFoundMsg = !res.data.hits.length ? 'No hay más resultados :p' : '';
+    			this.setState({
+    				results: res.data.hits,
+    				message: resultNotFoundMsg,
+    				loading: false,
+    			});
+    		})
+    		.catch((error) => { // for handleing errors
+    			if (axios.isCancel(error) || error) {
+    				this.setState({
+    					loading: false,
+    					message: 'No pudimos conectarnos con el servidor :(',
+    				});
+    			}
+    		});
+    };
     
     handleOnInputChange = (event) => {
         const query = event.target.value;
-        this.setState({ query, loading: true, message: '' });
+        this.setState({ query, loading: true, message: '' }, ()=> {
+            this.fetchSearchResults(1, query);
+        });
     };
 
     render () {
@@ -31,7 +64,7 @@ class SearchBar extends Component {
 
                 <section className="rigth-side">
                     <button>
-                        <i class="fas fa-search"></i>
+                        <i className="fas fa-search"></i>
                     </button>
                     <input
                         name="query"
@@ -42,7 +75,7 @@ class SearchBar extends Component {
                         onChange={this.handleOnInputChange}
                     />
                     <button>
-                        <i class="far fa-star"></i>
+                        <i className="far fa-star"></i>
                     </button>
                 </section>
             </header>
