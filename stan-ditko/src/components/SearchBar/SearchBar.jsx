@@ -43,12 +43,33 @@ class SearchBar extends Component {
     			}
     		});
     };
-    
+
     handleOnInputChange = (event) => {
         const query = event.target.value;
         this.setState({ query, loading: true, message: '' }, ()=> {
             this.fetchSearchResults(1, query);
         });
+    };
+
+    renderSearchResults = () => {
+        const {results} = this.state;
+    
+        if (Object.keys(results).length && results.length) {
+            return (
+                <div className="results-container">
+                    {results.map((result) => {
+                        return (
+                            <a key={result.id} href={result.previewURL} className="result-items">
+                                <h6 className="image-username">{result.user}</h6>
+                                <div className="image-wrapper">
+                                    <img className="image" src={result.previewURL} alt={`${result.user} image`}/>
+                                </div>
+                            </a>
+                        );
+                    })}
+                </div>
+            );
+        }
     };
 
     render () {
@@ -78,6 +99,7 @@ class SearchBar extends Component {
                         <i className="far fa-star"></i>
                     </button>
                 </section>
+                {this.renderSearchResults()}
             </header>
         );
     }
