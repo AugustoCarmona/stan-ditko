@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './SearchBar.css';
+import { publicKey, ts, hash, url } from '../../Global';
 import axios from 'axios';
 
 class SearchBar extends Component {
@@ -15,8 +16,8 @@ class SearchBar extends Component {
     }
 
     fetchSearchResults = (updatedPageNo = '', query) => {
-    	const pageNumber = updatedPageNo ? `&page=${updatedPageNo}` : '';
-    	const searchUrl = `https://pixabay.com/api/?key=12413278-79b713c7e196c7a3defb5330e&q=${query}${pageNumber}`;
+        // const pageNumber = updatedPageNo ? `&page=${updatedPageNo}` : '';
+    	const searchUrl = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&name=${query}`;
 
     	if (this.cancel) {
     		this.cancel.cancel();
@@ -43,7 +44,7 @@ class SearchBar extends Component {
     			}
     		});
     };
-
+    
     handleOnInputChange = (event) => {
         const query = event.target.value;
         this.setState({ query, loading: true, message: '' }, ()=> {
@@ -51,35 +52,15 @@ class SearchBar extends Component {
         });
     };
 
-    renderSearchResults = () => {
-        const {results} = this.state;
-    
-        if (Object.keys(results).length && results.length) {
-            return (
-                <div className="results-container">
-                    {results.map((result) => {
-                        return (
-                            <a key={result.id} href={result.previewURL} className="result-items">
-                                <h6 className="image-username">{result.user}</h6>
-                                <div className="image-wrapper">
-                                    <img className="image" src={result.previewURL} alt={`${result.user} image`}/>
-                                </div>
-                            </a>
-                        );
-                    })}
-                </div>
-            );
-        }
-    };
-
     render () {
         const {query} = this.state;
         console.warn(this.state);
+
         return (
             <header className="SearchBar">
                 <section className="left-side">
                     <div className="logo">
-                        <a href="#"><img src="././src/assets/img/logo.png" alt="Marve Logo"/></a>
+                        <a href="#"><img src="././src/assets/img/logo.png" alt="Marvel Logo"/></a>
                     </div>
                 </section>
 
@@ -99,7 +80,6 @@ class SearchBar extends Component {
                         <i className="far fa-star"></i>
                     </button>
                 </section>
-                {this.renderSearchResults()}
             </header>
         );
     }
