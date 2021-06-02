@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './SearchBar.css';
+import { publicKey, ts, hash, url } from '../../Global';
 import axios from 'axios';
 
 class SearchBar extends Component {
@@ -8,15 +9,13 @@ class SearchBar extends Component {
 		this.state = {
 			query: '',
             results: {},
-            loading: false,
             message: '',
         };
         this.cancel = '';
     }
 
-    fetchSearchResults = (updatedPageNo = '', query) => {
-    	const pageNumber = updatedPageNo ? `&page=${updatedPageNo}` : '';
-    	const searchUrl = `https://pixabay.com/api/?key=12413278-79b713c7e196c7a3defb5330e&q=${query}${pageNumber}`;
+    fetchSearchResult = (query) => {
+    	const searchUrl = `https://gateway.marvel.com:443/v1/public/characters?name=${query}&apikey=${publicKey}`;
 
     	if (this.cancel) {
     		this.cancel.cancel();
@@ -31,13 +30,11 @@ class SearchBar extends Component {
     			this.setState({
     				results: res.data.hits,
     				message: resultNotFoundMsg,
-    				loading: false,
     			});
     		})
-    		.catch((error) => { // for handleing errors
+    		.catch((error) => {
     			if (axios.isCancel(error) || error) {
     				this.setState({
-    					loading: false,
     					message: 'No pudimos conectarnos con el servidor :(',
     				});
     			}
@@ -46,19 +43,20 @@ class SearchBar extends Component {
     
     handleOnInputChange = (event) => {
         const query = event.target.value;
-        this.setState({ query, loading: true, message: '' }, ()=> {
-            this.fetchSearchResults(1, query);
+        this.setState({ query, message: '' }, ()=> {
+            this.fetchSearchResult(query);
         });
     };
 
     render () {
         const {query} = this.state;
         console.warn(this.state);
+
         return (
             <header className="SearchBar">
                 <section className="left-side">
                     <div className="logo">
-                        <a href="#"><img src="././src/assets/img/logo.png" alt="Marve Logo"/></a>
+                        <a href="#"><img src="././src/assets/img/logo.png" alt="Marvel Logo"/></a>
                     </div>
                 </section>
 
