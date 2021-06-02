@@ -9,15 +9,13 @@ class SearchBar extends Component {
 		this.state = {
 			query: '',
             results: {},
-            loading: false,
             message: '',
         };
         this.cancel = '';
     }
 
-    fetchSearchResults = (updatedPageNo = '', query) => {
-        // const pageNumber = updatedPageNo ? `&page=${updatedPageNo}` : '';
-    	const searchUrl = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&name=${query}`;
+    fetchSearchResult = (query) => {
+    	const searchUrl = `https://gateway.marvel.com:443/v1/public/characters?name=${query}&apikey=${publicKey}`;
 
     	if (this.cancel) {
     		this.cancel.cancel();
@@ -32,13 +30,11 @@ class SearchBar extends Component {
     			this.setState({
     				results: res.data.hits,
     				message: resultNotFoundMsg,
-    				loading: false,
     			});
     		})
-    		.catch((error) => { // for handleing errors
+    		.catch((error) => {
     			if (axios.isCancel(error) || error) {
     				this.setState({
-    					loading: false,
     					message: 'No pudimos conectarnos con el servidor :(',
     				});
     			}
@@ -47,8 +43,8 @@ class SearchBar extends Component {
     
     handleOnInputChange = (event) => {
         const query = event.target.value;
-        this.setState({ query, loading: true, message: '' }, ()=> {
-            this.fetchSearchResults(1, query);
+        this.setState({ query, message: '' }, ()=> {
+            this.fetchSearchResult(query);
         });
     };
 

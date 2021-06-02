@@ -7,7 +7,7 @@ const Grid = () => {
     const [characters, setCharacters] = useState([]);
     useEffect(()=> {
         axios.get(`${url}`).then(res=>{
-        setCharacters(res.data.data.results);
+            setCharacters(res.data.data.results);
         }).catch(error=>console.log(error));
     }, []);
     console.log(characters);
