@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
+import { Bar } from './SearchBar.style';
 import './SearchBar.css';
 import { publicKey, ts, hash, url } from '../../Global';
 import axios from 'axios';

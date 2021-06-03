@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Grid.css';
+import { GridContainer, GridCard, CardImg, Details, Fav } from './Grid.style';
 import { url } from '../../Global';
 import axios from 'axios';
 
@@ -13,22 +13,22 @@ const Grid = () => {
     console.log(characters);
 
     return (
-        <section className="grid_container">
+        <GridContainer>
             {characters.map((item, index)=>{
                 return (
-                <div className="grid-card" key={index}>
+                <GridCard key={index}>
                     <a href={item.url}>
-                        <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name} className="grid-card_img"/>
-                        <button className="fav">
+                        <CardImg src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name}/>
+                        <Fav>
                             <i className="far fa-star"></i>
-                        </button>
-                        <div className="grid-card_details">
+                        </Fav>
+                        <Details>
                             <p>{item.name}</p>
-                        </div>
+                        </Details>
                     </a>
-                </div>);
+                </GridCard>);
             })}
-        </section>
+        </GridContainer>
     );
 }
 
