@@ -23,15 +23,6 @@ class SearchBar extends Component {
       this.search(e.target.value);
       this.setState({ value: e.target.value });
     };
-  
-    get rendercharacters() {
-      let characters = <h1>There's no heroes with that name :(</h1>;
-      if (this.state.characters) {
-        characters = <characters list={this.state.characters} />;
-      }
-  
-      return characters;
-    }
     
     render() {
         return (
@@ -54,7 +45,6 @@ class SearchBar extends Component {
                         <i className="far fa-star"></i>
                     </button>
                 </section>
-                {this.rendercharacters}
             </header>
         );
     }

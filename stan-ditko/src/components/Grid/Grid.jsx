@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { GridContainer, GridCard, CardImg, Details, Fav } from './Grid.style';
 import { url } from '../../Global';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const Grid = () => {
     const [characters, setCharacters] = useState([]);
@@ -17,7 +18,7 @@ const Grid = () => {
             {characters.map((item, index)=>{
                 return (
                 <GridCard key={index}>
-                    <a href={item.url}>
+                    <Link to={`/hero/${item.id}`}>
                         <CardImg src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name}/>
                         <Fav>
                             <i className="far fa-star"></i>
@@ -25,7 +26,7 @@ const Grid = () => {
                         <Details>
                             <p>{item.name}</p>
                         </Details>
-                    </a>
+                    </Link>
                 </GridCard>);
             })}
         </GridContainer>
@@ -33,3 +34,4 @@ const Grid = () => {
 }
 
 export default Grid;
+

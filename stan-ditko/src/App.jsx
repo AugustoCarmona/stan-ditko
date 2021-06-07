@@ -1,23 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import './assets/css/Normalize.css';
+import React from 'react';
 import './assets/css/App.css';
-import SearchBar from './components/SearchBar/SearchBar';
-import Grid from './components/Grid/Grid';
-// import { url } from './Global';
-// import axios from 'axios';
+import MainPage from './pages/MainPage';
+import NotFound from './pages/NotFound';
+import Hero from './pages/Hero';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 function App() {
-
   return (
-    <div className="App">
-      <div className="nav-bar">
-        <SearchBar />
-        <Grid />
-        {/* <SearchBar /> */}
-        {/* <Grid /> */}
-      </div>
-    </div>
-  )
+    <Router>
+      <Switch>
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/hero/:characterId" component={Hero} />
+        <Route exact path="/" component={NotFound} />
+        <Redirect to="/404" />
+      </Switch>
+    </Router>
+  );
 }
 
-export default App
+export default App;
