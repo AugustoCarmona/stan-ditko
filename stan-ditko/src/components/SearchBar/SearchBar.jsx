@@ -29,7 +29,7 @@ class SearchBar extends Component {
             <header className="SearchBar">
                 <section className="left-side">
                     <div className="logo">
-                        <a href="#"><img src="././src/assets/img/logo.png" alt="Marvel Logo"/></a>
+                        <a href="/"><img src="/././src/assets/img/logo.png" alt="Marvel Logo"/></a>
                     </div>
                 </section>
                 <section className="rigth-side">

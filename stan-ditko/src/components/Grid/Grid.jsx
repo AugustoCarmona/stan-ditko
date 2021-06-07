@@ -17,17 +17,17 @@ const Grid = () => {
         <GridContainer>
             {characters.map((item, index)=>{
                 return (
-                <GridCard key={index}>
-                    <Link to={`/hero/${item.id}`}>
-                        <CardImg src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name}/>
-                        <Fav>
-                            <i className="far fa-star"></i>
-                        </Fav>
-                        <Details>
-                            <p>{item.name}</p>
-                        </Details>
-                    </Link>
-                </GridCard>);
+                    <GridCard key={index}>
+                        <Link to={`/hero/${item.id}`}>
+                            <CardImg src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name}/>
+                            <Fav>
+                                <i className="far fa-star"></i>
+                            </Fav>
+                            <Details>
+                                <p>{item.name}</p>
+                            </Details>
+                        </Link>
+                    </GridCard>);
             })}
         </GridContainer>
     );
