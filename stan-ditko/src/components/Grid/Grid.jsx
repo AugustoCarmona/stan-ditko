@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './Grid.css';
+import { GridContainer, GridCard, CardImg, Details, Fav } from './Grid.style';
 import { url } from '../../Global';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const Grid = () => {
     const [characters, setCharacters] = useState([]);
@@ -13,23 +14,24 @@ const Grid = () => {
     console.log(characters);
 
     return (
-        <section className="grid_container">
+        <GridContainer>
             {characters.map((item, index)=>{
                 return (
-                <div className="grid-card" key={index}>
-                    <a href={item.url}>
-                        <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name} className="grid-card_img"/>
-                        <button className="fav">
-                            <i className="far fa-star"></i>
-                        </button>
-                        <div className="grid-card_details">
-                            <p>{item.name}</p>
-                        </div>
-                    </a>
-                </div>);
+                    <GridCard key={index}>
+                        <Link to={`/hero/${item.id}`}>
+                            <CardImg src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name}/>
+                            <Fav>
+                                <i className="far fa-star"></i>
+                            </Fav>
+                            <Details>
+                                <p>{item.name}</p>
+                            </Details>
+                        </Link>
+                    </GridCard>);
             })}
-        </section>
+        </GridContainer>
     );
 }
 
 export default Grid;
+
