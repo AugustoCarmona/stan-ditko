@@ -64,7 +64,7 @@ export const GridContainer =  Styled.div `
 `;
 
 export const ComicCard =  Styled.div `
-    width: 310px;
+    width: 320px;
     height: 490px;
     overflow: hidden;
     cursor: pointer;
@@ -75,7 +75,7 @@ export const ComicCard =  Styled.div `
 `;
 
 export const ComicImg =  Styled.img `
-    width: 310px;
+    width: 320px;
     height: 490px;
     object-fit: cover;
 `;

@@ -41,11 +41,11 @@ const HeroDetails = () => {
         <div>
             <HeroContainer>
                 <Card>
-                    <CardImg></CardImg>
+                    <CardImg src={`${hero?.thumbnail?.path}.${hero?.thumbnail?.extension}`} />
                 </Card>
                 <InfoContainer>
-                    <h3>{hero.name}</h3>
-                    <p>{hero.description}</p>
+                    <h3>{hero?.name}</h3>
+                    <p>{hero?.description}</p>
                 </InfoContainer>
             </HeroContainer>
             <Comics>
@@ -55,7 +55,7 @@ const HeroDetails = () => {
                         return(
                             <ComicCard key={index}>
                                 <Link to="/">
-                                    <ComicImg src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name} />
+                                    <ComicImg src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`} alt={item?.name} />
                                     <Fav>
                                         <i className="far fa-star"></i>
                                     </Fav>
