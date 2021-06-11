@@ -20,6 +20,7 @@ const HeroDetails = () => {
     const { characterId } = useParams();
     const [hero, setCharacter] = useState([]);
     const [comics, setComics] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(()=> {
         axios.get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}?apikey=c70bee055661b1eabc28f40a0fea1796`)
@@ -33,7 +34,8 @@ const HeroDetails = () => {
         axios.get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?orderBy=issueNumber&limit=21&apikey=c70bee055661b1eabc28f40a0fea1796`)
         .then(res=>{
             setComics(res.data.data.results);
-        }).catch(error=>console.log(error));
+        })
+        .catch(error=>console.log(error));
     }, []);
     console.log(comics);
 

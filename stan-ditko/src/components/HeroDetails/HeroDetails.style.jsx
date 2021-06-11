@@ -44,7 +44,7 @@ export const CardImg =  Styled.img `
 
 export const InfoContainer =  Styled.div `
     color: #ffffff;
-    font-size: 18px;
+    font-size: 28px;
     width: 50%;
     bottom: 0;
 `;

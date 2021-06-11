@@ -3,6 +3,7 @@ import '../assets/css/Normalize.css';
 import '../assets/css/App.css';
 import SearchBar from '../components/SearchBar/SearchBar';
 import Grid from '../components/Grid/Grid';
+import Footer from '../components/Footer/Footer';
 
 const MainPage = () => {
     return(
@@ -10,6 +11,7 @@ const MainPage = () => {
           <div className="nav-bar">
             <SearchBar />
             <Grid />
+            <Footer />
           </div>
         </div>
     );
