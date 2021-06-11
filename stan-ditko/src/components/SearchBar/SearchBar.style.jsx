@@ -1,60 +1,40 @@
 import Styled from 'styled-components';
 
-export const Bar =  Styled.header `
-    background: #ffffff;
-    width: 100%;
-    height: 60px;
+export const SearchBarStyle = styled.header`
+    grid-column: 1/-1;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px grey;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-`;
-
-export const GridCard =  Styled.div `
-    width: 240px;
-    height: 310px;
-    border-radius: 3px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.4);
-    transition: 1.3s;
-    &:hover {
-        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 1);
-    }
-`;
-
-export const CardImg =  Styled.img `
-    width: 240px;
-    height: 310px;
-    border-radius: 3px;
-    object-fit: cover;
-`;
-
-export const Details =  Styled.div `
-    color: #ffffff;
+    padding: 2vh 1vw;
+    .LogoAndInput {
+      display: flex;
+      align-items: center;
+}
+.search {
+    margin-left: 3vw;
     font-size: 18px;
-    font-weight: 600;
-    padding: 6px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-`;
-
-export const Fav =  Styled.button `
-    color: #d1d9d9;
-    background: none;
+    opacity: 0.4;
+}
+.search input {
+    margin-left: 0.8vw;
+    background-color: #fafafa;
+    outline: none;
     border: none;
-    font-size: 25px;
-    padding: 1rem;
-    position: absolute;
-    top: 0;
-    left: 100;
-    right: 0;
-    bottom: 100;
-    &:hover {
-        cursor: ne-resize;
+}
+.search:hover {
+    opacity: 1;
+    i {
+      opacity: 1;
     }
-`;
+}
+.LogoAndInput img {
+    color: #20273e;
+    height: 3.5vh;
+    font-family: "Roboto Mono", monospace;
+}
+.favourites {
+    margin-right: 5vw;
+    opacity: 0.4;
+}`;

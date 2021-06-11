@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const Grid = () => {
     const [characters, setCharacters] = useState([]);
+    
     useEffect(()=> {
         axios.get(`${url}`).then(res=>{
             setCharacters(res.data.data.results);

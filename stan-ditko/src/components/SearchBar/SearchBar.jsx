@@ -36,11 +36,11 @@ class SearchBar extends Component {
                     <button>
                         <i className="fas fa-search"></i>
                     </button>
-                    <input
-                        value={this.state.value}
-                        onChange={e => this.onChangeHandler(e)}
-                        placeholder="Search..."
-                    />
+                        <input
+                            value={this.state.value}
+                            onChange={e => this.onChangeHandler(e)}
+                            placeholder="Search..."
+                        />
                     <button>
                         <i className="far fa-star"></i>
                     </button>
