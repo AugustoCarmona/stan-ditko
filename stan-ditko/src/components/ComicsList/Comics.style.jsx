@@ -46,14 +46,3 @@ export const Fav =  Styled.div `
         cursor: ne-resize;
     }
 `;
-
-export const Details =  Styled.div `
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 6px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-`;

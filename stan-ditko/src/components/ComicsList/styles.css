@@ -1,0 +1,49 @@
+.ComicsContainer {
+    display: grid;
+    justify-content: center;
+    margin-top: 30px;
+}
+.ComicSelfContainer {
+    background-color: #ffffff;
+    width: 130vh;
+    height: 390px;
+    margin-bottom: 50px;
+    position: relative;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: 100%;
+}
+.foto {
+    width: 180px;
+}
+.foto img {
+    height: 100%;
+    width: 300px;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.arriba {
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    background-color: grey;
+}
+h5 {
+    font-size: 30px;
+}
+.abajo {
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.abajo p {
+    font-size: 17px;
+    color: black;
+}

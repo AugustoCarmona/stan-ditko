@@ -18,7 +18,7 @@ export const HeroContainer =  Styled.section `
         bottom: 0;
         left: 0;
         transform-origin: top left;
-        transform: skewY(4deg);
+        transform: skewY(17deg);
     }
 `;
 
