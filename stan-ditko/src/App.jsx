@@ -8,20 +8,21 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link,
   Redirect
 } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={MainPage} />
-        <Route exact path="/hero/:characterId" component={Hero} />
-        <Route exact path="/" component={NotFound} />
-        <Redirect to="/404" />
-      </Switch>
-    </Router>
+    /* <Context > */
+      <Router>
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+          <Route exact path="/hero/:characterId" component={Hero} />
+          <Route exact path="/" component={NotFound} />
+          <Redirect to="/404" />
+        </Switch>
+      </Router>
+    /* <Context /> */
   );
 }
 
