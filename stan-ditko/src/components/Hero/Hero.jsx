@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { ids } from './charIds';
+import { HeroContainer, Card, CardImg, InfoContainer } from './Hero.styles';
+import { ids } from './CharIds';
 import axios from 'axios';
-import './styles.css';
 
-const RandomHero = () => {
+const Hero = () => {
     const [hero, setCharacter] = useState([]);
     
     useEffect(()=> {
@@ -15,14 +15,13 @@ const RandomHero = () => {
         })
         .catch(error=>console.log(error));
     }, []);
-    console.log(hero);
 
     return (
-        <section className="heroContainer">
-            <div className="card">
-                <img src={`${hero?.thumbnail?.path}.${hero?.thumbnail?.extension}`} alt={hero.name}/>
-            </div>
-            <div className="infoContainer">
+        <HeroContainer>
+            <Card>
+                <CardImg src={`${hero?.thumbnail?.path}.${hero?.thumbnail?.extension}`} alt={hero.name} />
+            </Card>
+            <InfoContainer>
                 <h3>Wellcome to the Marvel's Hero Seach!</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
                     standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
@@ -30,10 +29,9 @@ const RandomHero = () => {
                     typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset 
                     sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
                     including versions of Lorem Ipsum.</p>
-            </div>
-        </section>
+            </InfoContainer>
+        </HeroContainer>
     );
 }
 
-export default RandomHero;
-
+export default Hero;

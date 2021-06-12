@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {
-    HeroContainer,
-    Card,
-    CardImg,
-    InfoContainer,
     Comics,
     GridContainer,
     ComicCard,
     ComicImg,
-    Fav,
-    Details
+    Fav
 } from './Comics.style';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
@@ -29,25 +24,23 @@ const ComicsList = () => {
     console.log(comics);
 
     return (
-        <div>
-            <Comics>
-                <h4>Comics</h4>
-                <GridContainer>
-                    {comics.map((item,index)=>{
-                        return(
-                            <ComicCard key={index}>
-                                <Link to="/">
-                                    <ComicImg src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`} alt={item?.name} />
-                                    <Fav>
-                                        <i className="far fa-star"></i>
-                                    </Fav>
-                                </Link>
-                            </ComicCard>
-                        );
-                    })}
-                </GridContainer>
-            </Comics>
-        </div>
+        <Comics>
+            <h4>Comics</h4>
+            <GridContainer>
+                {comics.map((item,index)=>{
+                    return(
+                        <ComicCard key={index}>
+                            <Link to="/">
+                                <ComicImg src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`} alt={item?.name} />
+                                <Fav>
+                                    <i className="far fa-star"></i>
+                                </Fav>
+                            </Link>
+                        </ComicCard>
+                    );
+                })}
+            </GridContainer>
+        </Comics>
     );
 }
 

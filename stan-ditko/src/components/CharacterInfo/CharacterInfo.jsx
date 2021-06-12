@@ -3,23 +3,14 @@ import {
     HeroContainer,
     Card,
     CardImg,
-    InfoContainer,
-    Comics,
-    GridContainer,
-    ComicCard,
-    ComicImg,
-    Fav,
-    Details
-} from './HeroDetails.style';
+    InfoContainer
+} from './CharacterInfo.style';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-const HeroDetails = () => {
+const CharacterInfo = () => {
     const { characterId } = useParams();
     const [hero, setCharacter] = useState([]);
-    const [comics, setComics] = useState([]);
-    const [loading, setLoading] = useState(false);
 
     useEffect(()=> {
         axios
@@ -29,7 +20,6 @@ const HeroDetails = () => {
         })
         .catch(error=>console.log(error));
     }, []);
-    console.log(hero);
 
     return (
         <div>
@@ -46,4 +36,4 @@ const HeroDetails = () => {
     );
 }
 
-export default HeroDetails;
+export default CharacterInfo;
