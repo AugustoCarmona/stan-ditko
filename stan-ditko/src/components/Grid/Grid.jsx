@@ -1,11 +1,11 @@
 import React from 'react';
 import { GridContainer, GridCard, CardImg, Details, Fav } from './Grid.style';
-// import Context from 'context';
 import { Link } from "react-router-dom";
 import call from '../../CallApi'
+// import Context from 'context';
 
 const Grid = () => {
-    let url = `https://gateway.marvel.com:443/v1/public/characters?orderBy=-modified&limit=10&apikey=c70bee055661b1eabc28f40a0fea1796`
+    const url = `https://gateway.marvel.com:443/v1/public/characters?orderBy=-modified&limit=10&apikey=c70bee055661b1eabc28f40a0fea1796`;
     let characters = call(url);
 
     /*

@@ -7,8 +7,6 @@ const Hero = () => {
     let id = ids[Math.floor(Math.random()*ids.length)];
     let url = `https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=c70bee055661b1eabc28f40a0fea1796`;
     let character = call(url, true);
-    console.log(character)
-    // let character = array[0];
 
     return (
         <HeroContainer>
