@@ -11,7 +11,7 @@ import call from '../../CallApi'
 const CharacterInfo = () => {
     const { characterId } = useParams();
     let url = `https://gateway.marvel.com:443/v1/public/characters/${characterId}?apikey=c70bee055661b1eabc28f40a0fea1796`;
-    let character = call(url);
+    let character = call(url, true);
 
     return (
         <div>

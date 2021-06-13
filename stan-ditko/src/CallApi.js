@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default (url) => { 
-    const [character, setCharacter] = useState([]);
+export default (url, single = false) => { 
+    const [element, setelement] = useState([]);
 
     useEffect(()=> {
         axios
         .get(url)
         .then(res=>{
-            setCharacter(res.data.data.results);
+            single ? setelement(res.data.data.results[0]) : setelement(res.data.data.results);
         })
         .catch(error=>console.log(error));
     }, []);
 
-    return character;
+    return element;
 };
