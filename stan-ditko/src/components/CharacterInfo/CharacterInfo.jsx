@@ -1,35 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     HeroContainer,
     Card,
     CardImg,
     InfoContainer
 } from './CharacterInfo.style';
-import axios from 'axios';
 import { useParams } from "react-router-dom";
+import call from '../../CallApi'
 
 const CharacterInfo = () => {
     const { characterId } = useParams();
-    const [hero, setCharacter] = useState([]);
-
-    useEffect(()=> {
-        axios
-        .get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}?apikey=c70bee055661b1eabc28f40a0fea1796`)
-        .then(res=>{
-            setCharacter(res.data.data.results[0]);
-        })
-        .catch(error=>console.log(error));
-    }, []);
+    let url = `https://gateway.marvel.com:443/v1/public/characters/${characterId}?apikey=c70bee055661b1eabc28f40a0fea1796`;
+    let character = call(url);
 
     return (
         <div>
             <HeroContainer>
                 <Card>
-                    <CardImg src={`${hero?.thumbnail?.path}.${hero?.thumbnail?.extension}`} />
+                    <CardImg src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} />
                 </Card>
                 <InfoContainer>
-                    <h3>{hero?.name}</h3>
-                    <p>{hero?.description}</p>
+                    <h3>{character?.name}</h3>
+                    <p>{character?.description}</p>
                 </InfoContainer>
             </HeroContainer>
         </div>

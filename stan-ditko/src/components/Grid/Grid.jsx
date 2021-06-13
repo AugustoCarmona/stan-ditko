@@ -1,22 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { GridContainer, GridCard, CardImg, Details, Fav } from './Grid.style';
-import { url } from '../../Global';
-import axios from 'axios';
 // import Context from 'context';
 import { Link } from "react-router-dom";
+import call from '../../CallApi'
 
 const Grid = () => {
-    const [characters, setCharacters] = useState([]);
-    
-    useEffect(()=> {
-        axios
-        .get(`${url}`)
-        .then(res=>{
-            setCharacters(res.data.data.results);
-        })
-        .catch(error=>console.log(error));
-    }, []);
-    console.log(characters);
+    let url = `https://gateway.marvel.com:443/v1/public/characters?orderBy=-modified&limit=10&apikey=c70bee055661b1eabc28f40a0fea1796`
+    let characters = call(url);
 
     /*
     const onClick = () => {
