@@ -6,43 +6,42 @@ export const Comics =  Styled.div `
     color: #fff;
 `;
 
-export const GridContainer =  Styled.div `
+export const GridContainer =  Styled.section `
     display: grid;
-    grid-template-columns: repeat(auto-fit, 400px);
+    grid-template-columns: repeat(auto-fit, 270px);
     justify-content: center;
-    grid-gap: 70px;
-    padding-left: 5.5%;
+    grid-gap: 90px;
+    margin: 50px 0;
 `;
 
-export const ComicCard =  Styled.div `
-    width: 320px;
-    height: 490px;
+export const SelfContainer =  Styled.section `
+    width: 270px;
+    background-color: white;
+    height: 570px;
+    border-radius: 3px;
     overflow: hidden;
     cursor: pointer;
-    position: relative;
+    display: flex;
+    justify-content: center;
+`;
+
+export const Comic =  Styled.div `
+    img {
+        width: 270px;
+        max-height: 410px;
+        border-radius: 3px;
+        object-fit: cover;
+    }
+`;
+
+export const Title =  Styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-`;
-
-export const ComicImg =  Styled.img `
-    width: 320px;
-    height: 490px;
-    object-fit: cover;
-`;
-
-export const Fav =  Styled.div `
-    color: #d1d9d9;
-    background: none;
-    border: none;
-    font-size: 25px;
-    padding: 1rem;
-    position: absolute;
-    top: 0;
-    left: 100;
-    right: 0;
-    bottom: 100;
-    &:hover {
-        cursor: ne-resize;
+    padding: 10px;
+    h5 {
+        color: black;
+        font-size: 17px;
     }
 `;
+

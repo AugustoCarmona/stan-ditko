@@ -25,9 +25,3 @@ const SearchBar = () => {
 }
 
 export default SearchBar;
-
-/*
-<label className="logo">
-    <a href="/"><img src="/././src/assets/img/logo.png" alt="Marvel Logo"/></a>
-</label>
-*/
