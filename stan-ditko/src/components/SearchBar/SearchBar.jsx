@@ -1,3 +1,10 @@
+/*
+This component makes a call to the api passing as a parameter the value entered in the input and
+returns the first value whose name matches.
+
+Still does not render anything
+*/
+
 import React, { Component } from 'react';
 import axios from 'axios';
 import {
@@ -8,20 +15,17 @@ import {
     Input
 } from './SearchBar.styles'
 
-class SearchBar extends Component {
+class SearchBar extends Component { // I didn't find a way to use hook without bugs );
     state = {
       characters: null,
-      loading: false,
       value: ''
     };
   
     search = async charName => {
-        this.setState({ loading: true });
         const res = await axios(
           `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${charName}&limit=10&apikey=c70bee055661b1eabc28f40a0fea1796`
         );
         const characters = await res.data.results;
-        this.setState({ characters, loading: false });
         console.log(res.data.data.results[0]);
     };
   

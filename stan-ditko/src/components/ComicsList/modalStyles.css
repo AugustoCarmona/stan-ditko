@@ -1,0 +1,33 @@
+.Modal {
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 80px;
+    top: 100px;
+    left: 100px;
+    right: 100px;
+    bottom: 100px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    outline:none;
+}
+.Modal h4 {
+    font-size: 50px;
+}
+.Modal h6 {
+    font-size: 20px;
+}
+.Modal img {
+    max-height: 500px;
+    margin-right: 100px;
+}
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.041);
+}

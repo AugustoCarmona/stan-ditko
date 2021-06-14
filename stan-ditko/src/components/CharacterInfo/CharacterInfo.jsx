@@ -1,3 +1,7 @@
+/*
+This component gets its styles from SingleCharacter.styles.jsx (in the src folder)
+*/
+
 import React from 'react';
 import { Container, Presentation } from '../../SingleCharacter.styles';
 import { useParams } from "react-router-dom";
