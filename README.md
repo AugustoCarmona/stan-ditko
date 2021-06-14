@@ -40,22 +40,39 @@ It consists of a search engine for super heroes and comics from the marvel publi
 ### Screenshots:
 ![](https://i.ibb.co/tBQdyZv/landing.png)
 > Landing
+<br />
+
 ![](https://i.ibb.co/RjcWLr0/main-grid.png)
 > Main grid
+<br />
+
 ![](https://i.ibb.co/LvWPQrt/character-detail.png)
 > Character detail
+<br />
+
 ![](https://i.ibb.co/y8G697y/comics-grid.png)
 > Comics grid
+<br />
+
 ![](https://i.ibb.co/NKQr6cn/modal.png)
 > Modal
+<br />
+
 ![](https://i.ibb.co/XY4225c/mobile-landing.png)
 > Mobile landing
+<br />
+
 ![](https://i.ibb.co/x3rGqVn/mobile-main-grid.png)
 > Mobile main grid
+<br />
+
 ![](https://i.ibb.co/Rcsxd8M/mobile-character-detail.png)
 > Mobile character detail
+<br />
+
 ![](https://i.ibb.co/tmfzRBk/mobile-comic-grid.png)
 > Mobile comic grid
+<br />
 
 ---
 ### Run Locally
@@ -73,6 +90,5 @@ It consists of a search engine for super heroes and comics from the marvel publi
 
 ---
 ### Author
+
 Augusto Carmona. [Contact Me!](http://augustocarmona.github.io "Contact Me!")
-=======
-<!-- [Visit this Site!]( "Visit this Site!") -->
