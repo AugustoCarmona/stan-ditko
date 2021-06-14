@@ -74,3 +74,5 @@ It consists of a search engine for super heroes and comics from the marvel publi
 ---
 ### Author
 Augusto Carmona. [Contact Me!](http://augustocarmona.github.io "Contact Me!")
+=======
+<!-- [Visit this Site!]( "Visit this Site!") -->
