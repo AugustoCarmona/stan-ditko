@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Comics,
     GridContainer,
@@ -8,12 +8,13 @@ import {
 } from './ComicsList.styles';
 import { useParams } from "react-router-dom";
 import call from '../../CallApi'
+import Modal from 'react-modal';
 
 const ComicsList = () => {
     const { characterId } = useParams();
     let url = `https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?orderBy=issueNumber&limit=20&apikey=c70bee055661b1eabc28f40a0fea1796`;
     let comics = call(url);
-
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     return (
         <Comics>
             <h4>Here you have some Comics</h4>
@@ -23,7 +24,26 @@ const ComicsList = () => {
                     <SelfContainer key={index}>
                         <Comic>
                             <img src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`} alt={item?.name} />
-                            <Title><h5>{item.title}</h5></Title>
+                            <Title><button onClick={()=>{
+                                setModalIsOpen(true);
+                            }}><h5>{item.title}</h5></button></Title>
+                            <Modal
+                                isOpen={modalIsOpen}
+                                style={
+                                    {
+                                        overlay: {
+                                            background: 'grey'
+                                        }
+                                    }
+                                }
+                                onRequestClose={()=>{setModalIsOpen(false)}}>
+                                <h1>hola</h1>
+                                <div>
+                                    <button onClick={()=>{
+                                        setModalIsOpen(false);
+                                    }}>Cierralo mi pana</button>
+                                </div>
+                            </Modal>
                         </Comic>
                     </SelfContainer>
                 );

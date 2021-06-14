@@ -3,6 +3,8 @@ import './assets/css/App.css';
 import MainPage from './pages/MainPage';
 import NotFound from './pages/NotFound';
 import CharacterInfo from './pages/CharacterInfo';
+import Modal from 'react-modal';
+Modal.setAppElement('#root');
 
 import {
   BrowserRouter as Router,

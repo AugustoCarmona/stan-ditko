@@ -20,7 +20,6 @@ export const SelfContainer =  Styled.section `
     height: 570px;
     border-radius: 3px;
     overflow: hidden;
-    cursor: pointer;
     display: flex;
     justify-content: center;
 `;
@@ -42,6 +41,11 @@ export const Title =  Styled.div `
     h5 {
         color: black;
         font-size: 17px;
+    }
+    button {
+        border: none;
+        background: white;
+        cursor: pointer;
     }
 `;
 
