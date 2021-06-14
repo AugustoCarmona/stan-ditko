@@ -25,7 +25,7 @@ export var Logo =  Styled.label `
     }
 `;
 
-export const Form =  Styled.form `
+export const Form =  Styled.div `
     display: flex;
     align-items: center;
 `;
