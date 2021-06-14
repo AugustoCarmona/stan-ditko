@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeroContainer, Card, CardImg, InfoContainer } from './Hero.styles';
+import { Container, Presentation } from '../../SingleCharacter.styles';
 import { ids } from './CharIds';
 import call from '../../CallApi'
 
@@ -9,15 +9,10 @@ const Hero = () => {
     let character = call(url, true, true);
 
     return (
-        <HeroContainer>
-            <Card>
-                <CardImg src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} alt={character.name} />
-            </Card>
-            <InfoContainer>
-                <h3>Wellcome to the Marvel's Hero Seach!</h3>
-                <p>Dummy Text</p>
-            </InfoContainer>
-        </HeroContainer>
+        <Container>
+            <img src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} alt={character.name} />
+            <Presentation><h1>Wellcome to Marvel's Hero Seach!</h1></Presentation>
+        </Container>
     );
 }
 

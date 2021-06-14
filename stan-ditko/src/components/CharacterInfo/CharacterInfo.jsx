@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-    HeroContainer,
-    Card,
-    CardImg,
-    InfoContainer
-} from './CharacterInfo.styles';
+import { Container, Presentation } from '../../SingleCharacter.styles';
 import { useParams } from "react-router-dom";
 import call from '../../CallApi'
 
@@ -15,15 +10,13 @@ const CharacterInfo = () => {
 
     return (
         <div>
-            <HeroContainer>
-                <Card>
-                    <CardImg src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} />
-                </Card>
-                <InfoContainer>
-                    <h3>{character?.name}</h3>
-                    <p>{character?.description}</p>
-                </InfoContainer>
-            </HeroContainer>
+            <Container>
+                    <img src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} />
+                    <Presentation>
+                        <h3>{character?.name}</h3>
+                        <p>{character?.description}</p>
+                    </Presentation>
+            </Container>
         </div>
     );
 }
