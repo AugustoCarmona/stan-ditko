@@ -1,27 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { GridContainer, GridCard, CardImg, Details, Fav } from './Grid.styles';
+import React from 'react';
 import { Link } from "react-router-dom";
 import call from '../../CallApi'
-// import Context from 'context';
-
-import axios from 'axios';
+import {
+    GridContainer,
+    GridCard,
+    CardImg,
+    Details,
+    Fav
+} from './Grid.styles';
 
 const Grid = () => {
     const url = `https://gateway.marvel.com:443/v1/public/characters?orderBy=-modified&limit=10&apikey=c70bee055661b1eabc28f40a0fea1796`;
     let characters = call(url);
-    
-    /*
-    const onClick = () => {
-        console.log("click");
-    };
-
-    const isFav = () => {
-        const [state, setState] = useContext(false);
-        localStorage.setItem('comicsStars', JSON.stringify(favs));
-        setState({isFav: true});
-        return setState;
-    };
-    */
 
     return (
         <GridContainer>
@@ -31,7 +21,7 @@ const Grid = () => {
                         <Link to={`/hero/${item.id}`}>
                             <CardImg src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name}/>
                             <Fav>
-                                <i className="far fa-star" /*onClick={onClick}*/></i>
+                                <i className="far fa-star"></i>
                             </Fav>
                             <Details>
                                 <p>{item.name}</p>

@@ -16,6 +16,13 @@ It consists of a search engine for super heroes and comics from the marvel publi
 - [Axios](http://https://www.npmjs.com/package/axios "Axios")
 
 ---
+### Bugs
+- I was still not able to correct this error in console: `:3000/undefined.undefined:1 GET http://localhost:3000/undefined.undefined 404 (Not Found)`
+- Modals are not responsive yet
+- Modals are not responsive yet
+- For some reason, for the moment all modals return the data from the last comic called only.
+
+---
 ### Implemented features
 - When you enter the web app for the first time without any character in the URL, the site shows a random character (in the form of a hero) and so on every time you reload the page.
 - The search contemplate looking for text similarities and name similarities, but only returns the first character result.
@@ -31,8 +38,24 @@ It consists of a search engine for super heroes and comics from the marvel publi
 
 ---
 ### Screenshots:
-![](https://i.ibb.co/zJbHBGk/preview.png)
-> Landing page
+![](https://i.ibb.co/tBQdyZv/landing.png)
+> Landing
+![](https://i.ibb.co/RjcWLr0/main-grid.png)
+> Main grid
+![](https://i.ibb.co/LvWPQrt/character-detail.png)
+> Character detail
+![](https://i.ibb.co/y8G697y/comics-grid.png)
+> Comics grid
+![](https://i.ibb.co/NKQr6cn/modal.png)
+> Modal
+![](https://i.ibb.co/XY4225c/mobile-landing.png)
+> Mobile landing
+![](https://i.ibb.co/x3rGqVn/mobile-main-grid.png)
+> Mobile main grid
+![](https://i.ibb.co/Rcsxd8M/mobile-character-detail.png)
+> Mobile character detail
+![](https://i.ibb.co/tmfzRBk/mobile-comic-grid.png)
+> Mobile comic grid
 
 ---
 ### Run Locally

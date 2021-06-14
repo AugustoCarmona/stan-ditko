@@ -11,6 +11,7 @@
     bottom: 100px;
     border-radius: 30px;
     background-color: #ffffff;
+    outline:none;
 }
 .Modal h4 {
     font-size: 50px;
