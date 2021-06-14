@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { GridContainer, GridCard, CardImg, Details, Fav } from './Grid.style';
+import { GridContainer, GridCard, CardImg, Details, Fav } from './Grid.styles';
 import { Link } from "react-router-dom";
 import call from '../../CallApi'
 // import Context from 'context';

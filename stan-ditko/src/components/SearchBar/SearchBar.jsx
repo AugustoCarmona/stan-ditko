@@ -5,7 +5,7 @@ import {
     Form,
     Button,
     Input
-} from './SearchBar.style'
+} from './SearchBar.styles'
 
 const SearchBar = () => {
     return (

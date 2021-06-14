@@ -5,7 +5,7 @@ import {
     SelfContainer,
     Comic,
     Title
-} from './Comics.style';
+} from './ComicsList.styles';
 import { useParams } from "react-router-dom";
 import call from '../../CallApi'
 

@@ -4,7 +4,7 @@ import {
     Card,
     CardImg,
     InfoContainer
-} from './CharacterInfo.style';
+} from './CharacterInfo.styles';
 import { useParams } from "react-router-dom";
 import call from '../../CallApi'
 
