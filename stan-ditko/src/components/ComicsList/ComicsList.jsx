@@ -9,6 +9,7 @@ import {
 import { useParams } from "react-router-dom";
 import call from '../../CallApi'
 import Modal from 'react-modal';
+import './modalStyles.css';
 
 const ComicsList = () => {
     const { characterId } = useParams();
@@ -24,26 +25,22 @@ const ComicsList = () => {
                     <SelfContainer key={index}>
                         <Comic>
                             <img src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`} alt={item?.name} />
+                            
                             <Title><button onClick={()=>{
                                 setModalIsOpen(true);
-                            }}><h5>{item.title}</h5></button></Title>
+                            }}><h5>{item.title}</h5></button>
                             <Modal
                                 isOpen={modalIsOpen}
-                                style={
-                                    {
-                                        overlay: {
-                                            background: 'grey'
-                                        }
-                                    }
-                                }
+                                className="Modal"
+                                overlayClassName="Overlay"
                                 onRequestClose={()=>{setModalIsOpen(false)}}>
-                                <h1>hola</h1>
+                                <img src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`} alt={item?.name} />
                                 <div>
-                                    <button onClick={()=>{
-                                        setModalIsOpen(false);
-                                    }}>Cierralo mi pana</button>
+                                    <h4>{item.title}</h4>
+                                    <h6>{item.description}</h6>
                                 </div>
                             </Modal>
+                            </Title>
                         </Comic>
                     </SelfContainer>
                 );
