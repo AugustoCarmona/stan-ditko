@@ -33,6 +33,7 @@ export const Card =  Styled.div `
     justify-content: center;
     padding-left: 6%;
     padding-right: 3%;
+    display: none;
 `;
 
 export const CardImg =  Styled.img `
@@ -40,6 +41,7 @@ export const CardImg =  Styled.img `
     height: 410px;
     border-radius: 3px;
     object-fit: cover;
+    display: none;
 `;
 
 export const InfoContainer =  Styled.div `
@@ -47,4 +49,5 @@ export const InfoContainer =  Styled.div `
     font-size: 23px;
     width: 50%;
     bottom: 0;
+    display: none;
 `;

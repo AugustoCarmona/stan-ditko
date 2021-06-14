@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GridContainer, GridCard, CardImg, Details, Fav } from './Grid.style';
 import { Link } from "react-router-dom";
 import call from '../../CallApi'
 // import Context from 'context';
 
+import axios from 'axios';
+
 const Grid = () => {
     const url = `https://gateway.marvel.com:443/v1/public/characters?orderBy=-modified&limit=10&apikey=c70bee055661b1eabc28f40a0fea1796`;
     let characters = call(url);
-
+    
     /*
     const onClick = () => {
         console.log("click");

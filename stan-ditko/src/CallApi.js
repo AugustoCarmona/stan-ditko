@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export default (url, single = false) => { 
     const [element, setElement] = useState([]);
-
     useEffect(()=> {
         axios
         .get(url)
@@ -12,6 +11,5 @@ export default (url, single = false) => {
         })
         .catch(error=>console.log(error));
     }, []);
-
     return element;
 };
